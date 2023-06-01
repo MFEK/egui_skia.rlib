@@ -15,7 +15,6 @@ categories = ["gui"]
 winit = ["dep:egui-winit"]
 cpu_fix = []
 
-gl = ["skia-safe/gl"]
 vulkan = ["skia-safe/vulkan", "skulpin"]
 
 metal = ["skia-safe/metal"]
@@ -25,13 +24,12 @@ opt-level = 3
 
 [dependencies]
 
-egui = ">=0.21"
-skia-safe = { version = ">= 0.53", features = [] }
+egui = { git = "https://github.com/MFEK/egui.rlib" }
+skia-safe = { version = ">= 0.53", features = ["gl"] }
 egui-winit = { version = ">=0.20", optional = true, default-features = false }
 
 skulpin = { version = ">=0.14.1", features = [], optional = true}
 
-[dev-dependencies]
 softbuffer = { git = "https://github.com/john01dav/softbuffer" }
 egui_demo_lib = ">=0.20"
 raw-window-handle = "0.5"
