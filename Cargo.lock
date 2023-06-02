@@ -1626,7 +1626,7 @@ checksum = "a507befe795404456341dfab10cef66ead4c041f62b8b11bbb92bffe5d0953e0"
 [[package]]
 name = "softbuffer"
 version = "0.2.0"
-source = "git+https://github.com/john01dav/softbuffer#daf304adf9614c6b7bbb560d965a22742c1f8499"
+source = "git+https://github.com/john01dav/softbuffer#44248477be118d3e5fe430a1c2b1589b1fd734b3"
 dependencies = [
  "bytemuck",
  "cfg_aliases",
