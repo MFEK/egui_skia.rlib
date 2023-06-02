@@ -385,24 +385,38 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1f99fe3cac305af9d6d92971af60d0f7ea4d783201ef1673571567b6699964d9"
 
 [[package]]
+name = "ecolor"
+version = "0.21.0"
+source = "git+https://github.com/MFEK/egui.rlib#e8e20f6b2c0d136b0acc137c8d89f64e9596934e"
+
+[[package]]
 name = "egui"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6412a21e0bde7c0918f7fb44bbbb86b5e1f88e63c026a4e747cc7af02f76dfbe"
 dependencies = [
  "ahash",
- "epaint",
+ "epaint 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "nohash-hasher",
  "tracing",
 ]
 
 [[package]]
-name = "egui-skia-sdl2-event"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b46b0a20637084b34122d8f7875cdba0f08b77d270aa23be3fccb5f0a4637174"
+name = "egui"
+version = "0.21.0"
+source = "git+https://github.com/MFEK/egui.rlib#e8e20f6b2c0d136b0acc137c8d89f64e9596934e"
 dependencies = [
- "egui",
+ "ahash",
+ "epaint 0.21.0 (git+https://github.com/MFEK/egui.rlib)",
+ "nohash-hasher",
+]
+
+[[package]]
+name = "egui-sdl2-event"
+version = "0.3.0"
+source = "git+https://github.com/MFEK/egui-sdl2-event.rlib#2567b568080a2a281fe578c9a25f247acd503bc5"
+dependencies = [
+ "egui 0.21.0 (git+https://github.com/MFEK/egui.rlib)",
  "sdl2",
 ]
 
@@ -413,7 +427,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ab43597ba41f0ce39a364ad83185594578bfd8b3409b99dbcbb01df23afc3dbb"
 dependencies = [
  "android-activity",
- "egui",
+ "egui 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "instant",
  "tracing",
  "winit",
@@ -425,7 +439,7 @@ version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "86ac92d1776423b835012ac316bb0c27cd32bf0e21d82d183260732f0580a547"
 dependencies = [
- "egui",
+ "egui 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "egui_extras",
  "enum-map",
  "tracing",
@@ -438,7 +452,7 @@ version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f051342e97dfa2445107cb7d2e720617f5c840199b5cb4fe0ffcf481fcf5cce"
 dependencies = [
- "egui",
+ "egui 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde",
 ]
 
@@ -448,8 +462,8 @@ version = "0.3.0"
 dependencies = [
  "cocoa",
  "core-graphics-types",
- "egui",
- "egui-skia-sdl2-event",
+ "egui 0.21.0 (git+https://github.com/MFEK/egui.rlib)",
+ "egui-sdl2-event",
  "egui-winit",
  "egui_demo_lib",
  "foreign-types-shared",
@@ -474,6 +488,11 @@ name = "emath"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b8ecd80612937e0267909d5351770fe150004e24dab93954f69ca62eecd3f77e"
+
+[[package]]
+name = "emath"
+version = "0.21.0"
+source = "git+https://github.com/MFEK/egui.rlib#e8e20f6b2c0d136b0acc137c8d89f64e9596934e"
 
 [[package]]
 name = "enum-map"
@@ -505,8 +524,22 @@ dependencies = [
  "ab_glyph",
  "ahash",
  "atomic_refcell",
- "ecolor",
- "emath",
+ "ecolor 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "emath 0.21.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "nohash-hasher",
+ "parking_lot 0.12.1",
+]
+
+[[package]]
+name = "epaint"
+version = "0.21.0"
+source = "git+https://github.com/MFEK/egui.rlib#e8e20f6b2c0d136b0acc137c8d89f64e9596934e"
+dependencies = [
+ "ab_glyph",
+ "ahash",
+ "atomic_refcell",
+ "ecolor 0.21.0 (git+https://github.com/MFEK/egui.rlib)",
+ "emath 0.21.0 (git+https://github.com/MFEK/egui.rlib)",
  "nohash-hasher",
  "parking_lot 0.12.1",
 ]
