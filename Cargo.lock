@@ -442,11 +442,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "egui-sdl2-event"
-version = "0.3.0"
-source = "git+https://github.com/MFEK/egui-sdl2-event.rlib#2567b568080a2a281fe578c9a25f247acd503bc5"
+name = "egui-skia-sdl2-event"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b46b0a20637084b34122d8f7875cdba0f08b77d270aa23be3fccb5f0a4637174"
 dependencies = [
- "egui 0.21.0 (git+https://github.com/MFEK/egui.rlib)",
+ "egui 0.22.0",
  "sdl2",
 ]
 
@@ -493,7 +494,7 @@ dependencies = [
  "cocoa",
  "core-graphics-types",
  "egui 0.21.0 (git+https://github.com/MFEK/egui.rlib)",
- "egui-sdl2-event",
+ "egui-skia-sdl2-event",
  "egui-winit",
  "egui_demo_lib",
  "foreign-types-shared",
