@@ -20,7 +20,7 @@ pub fn rasterize(
     ui: impl FnMut(&Context),
     options: Option<RasterizeOptions>,
 ) -> Surface {
-    let mut surface = Surface::new_raster_n32_premul(size).expect("Failed to create surface");
+    let mut surface = skia_safe::surfaces::raster_n32_premul(size).expect("Failed to create surface");
     draw_onto_surface(&mut surface, ui, options);
     surface
 }
@@ -47,7 +47,8 @@ pub fn draw_onto_surface(
 
     backend.run(input, ui);
 
-    backend.paint(surface.canvas());
+    let canvas = surface.canvas();
+    backend.paint(canvas);
 }
 
 /// Convenience wrapper for using [`egui`] from a [`skia`] app.
@@ -92,7 +93,7 @@ impl EguiSkia {
     }
 
     /// Paint the results of the last call to [`Self::run`].
-    pub fn paint(&mut self, canvas: &mut Canvas) {
+    pub fn paint(&mut self, canvas: &Canvas) {
         let shapes = std::mem::take(&mut self.shapes);
         let textures_delta = std::mem::take(&mut self.textures_delta);
         let clipped_primitives = self.egui_ctx.tessellate(shapes);
