@@ -25,7 +25,7 @@ opt-level = 3
 [dependencies]
 
 egui = { git = "https://github.com/MFEK/egui.rlib" }
-skia-safe = { version = ">= 0.53", features = ["gl"] }
+skia-safe = { version = ">= 0.54", features = ["gl"] }
 egui-winit = { version = ">=0.20", optional = true, default-features = false }
 
 skulpin = { version = ">=0.14.1", features = [], optional = true}
@@ -37,7 +37,7 @@ foreign-types-shared = "0.1.1"
 
 sdl2 = { version = "0.35.2", features = ["raw-window-handle"] }
 gl = "0.14.0"
-egui-sdl2-event = { version = "=0.4.0", package = "egui-skia-sdl2-event" }
+egui-sdl2-event = { git = "https://github.com/MFEK/egui-sdl2-event.rlib" }
 
 [target.'cfg(target_os = "macos")'.dev-dependencies]
 metal = "0.24"
